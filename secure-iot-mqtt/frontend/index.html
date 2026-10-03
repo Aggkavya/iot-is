@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE IoT COMMAND CENTER</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SECURE IoT COMMAND CENTER</h1>
+            <div class="status-badge" id="broker-status">🟢 CONNECTED</div>
+        </header>
+
+        <main>
+            <div class="panel devices-panel">
+                <h2>Smart Devices</h2>
+                
+                <div class="device-card" id="door-card">
+                    <div class="device-info">
+                        <h3>SMART DOOR</h3>
+                        <p class="status" id="door-status">Status: <span class="badge gray">UNKNOWN</span></p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="sendCommand('door', 'LOCK')" class="btn-lock">LOCK</button>
+                        <button onclick="sendCommand('door', 'UNLOCK')" class="btn-unlock">UNLOCK</button>
+                    </div>
+                </div>
+
+                <div class="device-card" id="light-card">
+                    <div class="device-info">
+                        <h3>SMART LIGHT</h3>
+                        <p class="status" id="light-status">Status: <span class="badge gray">UNKNOWN</span></p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="sendCommand('light', 'ON')" class="btn-on">ON</button>
+                        <button onclick="sendCommand('light', 'OFF')" class="btn-off">OFF</button>
+                    </div>
+                </div>
+
+                <div class="device-card" id="alarm-card">
+                    <div class="device-info">
+                        <h3>SMART ALARM</h3>
+                        <p class="status" id="alarm-status">Status: <span class="badge gray">UNKNOWN</span></p>
+                    </div>
+                    <div class="controls">
+                        <button onclick="sendCommand('alarm', 'ARM')" class="btn-arm">ARM</button>
+                        <button onclick="sendCommand('alarm', 'DISARM')" class="btn-disarm">DISARM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-col">
+                <div class="panel security-panel">
+                    <h2>Security Status</h2>
+                    <ul class="security-list">
+                        <li><span>MQTT Broker:</span> <span class="badge green">CONNECTED</span></li>
+                        <li><span>Authentication:</span> <span class="badge green">ENABLED</span></li>
+                        <li><span>Authorization:</span> <span class="badge green">ENABLED</span></li>
+                        <li><span>ACL:</span> <span class="badge green">ACTIVE</span></li>
+                    </ul>
+                </div>
+
+                <div class="panel logs-panel">
+                    <h2>Security Log</h2>
+                    <div class="log-container" id="log-container">
+                        <!-- Logs injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
