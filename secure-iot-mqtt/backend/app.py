@@ -5,14 +5,15 @@ from threading import Lock
 from flask import Flask, request, jsonify, send_from_directory, Response
 import paho.mqtt.client as mqtt
 from dotenv import load_dotenv
+import os
 
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 app = Flask(__name__, static_folder='../frontend')
 
 # MQTT Configuration
 MQTT_BROKER = os.getenv("MQTT_BROKER", "127.0.0.1")
-MQTT_PORT = int(os.getenv("MQTT_PORT", 1883))
+MQTT_PORT = int(os.getenv("MQTT_PORT", 1884))
 MQTT_USERNAME = os.getenv("MQTT_USERNAME", "dashboard_user")
 MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", "dash123")
 

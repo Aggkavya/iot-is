@@ -6,7 +6,7 @@ To analyze the network traffic for this project, you can use Wireshark to observ
 ### Steps to Capture:
 1. Start Wireshark.
 2. Select your loopback interface (e.g., `Adapter for loopback traffic capture` on Windows) since everything is running on `127.0.0.1`.
-3. Apply the filter: `tcp.port == 1883` or `mqtt`.
+3. Apply the filter: `tcp.port == 1884` or `mqtt`.
 4. Start capturing.
 5. In your web dashboard, click **UNLOCK** on the door.
 6. Run the **Attacker Script**.
